@@ -1,4 +1,4 @@
-myBatisLogParser
+iBatisLogParser
 ================
 
 myBatisLogParser -> ibatis로 변경
