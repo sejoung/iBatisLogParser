@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<title>MyBatis Log parser</title>
+		<script src="js/common/tipJS-MVC-dev.js"></script>
+
+		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<link href="css/common.css" rel="stylesheet" media="screen">
+
+		<style type="text/css">
+		</style>
+	</head>
+	<body>
+		<div class="container-fluid">
+			<form id="defaultForm">
+
+				<div class="page-header">
+				  <h1>myBatis Log parser <small>my breakable toys</small></h1>
+				</div>
+
+				<div class="container-fluid">
+					<div class="row-fluid">
+						<div class="span9">
+							 <div class="row-fluid">
+								<div class="span11 alert hide">
+									<button type="button" class="close" data-dismiss="alert">&times;</button>
+									<strong><span id="div_alertType"></span></strong>
+									<span id="div_alertMsg"></span>
+								</div>
+							 </div>
+							<span class="label">Original Log :</span>
+							<p>
+								<textarea id="txt_origin" class="span11" rows="8"></textarea>
+							</p>
+							<div id="div_button_list" class="row-fluid">
+								<p>
+									<button id="btn_sample" class="btn">Sample</button>
+									<button id="btn_parse" class="btn">Parse</button>
+									<button id="btn_save" class="btn">Save Parsed SQL</button>
+									<button id="btn_remove" class="btn">Remove Parsed SQL</button>
+									<button id="btn_list" class="btn">List Parsed SQL</button>
+									<button id="btn_clear" class="btn">Clear LocalStorage</button>
+									<span id="span_status"></span>
+								</p>
+							</div>
+
+							<div class="row-fluid">
+								<span class="label">Parsed SQL:</span>
+								<p>
+									<textarea id="txt_parsing" class="span11" rows="8"></textarea>
+								</p>
+							</div>
+
+						</div>
+
+						<div class="span3">
+							<h4>history <span id="span_cnt"></span></h4>
+							<div id="div_history">
+							</div>
+						</div>
+					</div>
+					<footer>
+						<p>2017 my Breakable Toys, iBatis Log Parser. Written by <a href="https://sejoung.github.io/" target="_blank">sejoung</a>. Powered by <a href="http://tipjs.com" target="_blank">tipJS - JavaScript MVC Framework</a></p>
+					</footer>
+				</div>
+			</form>
+		</div>
+		<a href="https://github.com/sejoung/myBatisLogParser"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub" /></a>
+
+		<script>
+			$(document).ready(function() {
+				tipJS.loadApp("app");
+			});
+		</script>
+	</body>
+</html>
+
+<!--
+  [DEBUG][2017/07/20 10:05:05] c.i.c.l.j.JakartaCommonsLoggingImpl [debug:27] {pstm-100007} Executing Statement: SELECT TEST1, TEST2 FROM DUAL WHERE COL1 = ? AND COL2 = ? AND NO = ?
+  [DEBUG][2017/07/20 10:05:05] c.i.c.l.j.JakartaCommonsLoggingImpl [debug:27] {pstm-100007} Parameters: [CW, 9999]
+ -->
